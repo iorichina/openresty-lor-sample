@@ -3,11 +3,11 @@ local ipairs = ipairs
 local smatch = string.match
 local ssub = string.sub
 local slen = string.len
-local cjson = require("cjson")
-local utils = require("app.libs.utils")
-local pwd_secret = require("app.config.config").pwd_secret
-local lor = require("lor.index")
-local user_model = require("app.model.user")
+local cjson = include("cjson")
+local utils = include("app.libs.utils")
+local pwd_secret = include("app.config.config").pwd_secret
+local lor = include("lor.index")
+local user_model = include("app.model.user")
 local auth_router = lor:Router()
 
 

@@ -1,9 +1,9 @@
 local pairs = pairs
 local ipairs = ipairs
-local utils = require("app.libs.utils")
-local lor = require("lor.index")
-local page_config = require("app.config.config").page_config
-local notification_model = require("app.model.notification")
+local utils = include("app.libs.utils")
+local lor = include("lor.index")
+local page_config = include("app.config.config").page_config
+local notification_model = include("app.model.notification")
 local notification_router = lor:Router()
 local notification_page_size = page_config.notification_page_size
 

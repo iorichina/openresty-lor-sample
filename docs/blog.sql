@@ -23,6 +23,10 @@
 # Dump of table category
 # ------------------------------------------------------------
 
+drop database if exists `lor_blog`;
+create database `lor_blog` DEFAULT CHARSET=utf8;
+use `lor_blog`;
+
 DROP TABLE IF EXISTS `category`;
 
 CREATE TABLE `category` (
@@ -30,7 +34,7 @@ CREATE TABLE `category` (
   `name` varchar(15) NOT NULL DEFAULT '',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
@@ -57,7 +61,7 @@ CREATE TABLE `collect` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_user_topic` (`user_id`,`topic_id`),
   KEY `index_user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -75,7 +79,7 @@ CREATE TABLE `comment` (
   PRIMARY KEY (`id`),
   KEY `index_topic_id` (`topic_id`),
   KEY `index_user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -91,7 +95,7 @@ CREATE TABLE `follow` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_relation` (`from_id`,`to_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -109,7 +113,7 @@ CREATE TABLE `like` (
   UNIQUE KEY `unique_user_topic` (`user_id`,`topic_id`),
   KEY `index_user_id` (`user_id`),
   KEY `index_topic_id` (`topic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -130,7 +134,7 @@ CREATE TABLE `notification` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -158,7 +162,7 @@ CREATE TABLE `topic` (
   `category_id` int(11) NOT NULL DEFAULT '0' COMMENT '所属类',
   `is_good` int(11) NOT NULL DEFAULT '0' COMMENT '1精华帖，0普通帖',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `topic` WRITE;
 /*!40000 ALTER TABLE `topic` DISABLE KEYS */;
@@ -199,7 +203,7 @@ CREATE TABLE `user` (
   `is_admin` int(11) DEFAULT '0' COMMENT '1管理员，0普通用户',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;

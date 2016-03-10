@@ -1,8 +1,8 @@
 local type = type
-local utils = require("app.libs.utils")
-local user_model = require("app.model.user")
-local topic_model = require("app.model.topic")
-local comment_model = require("app.model.comment")
+local utils = include("app.libs.utils")
+local user_model = include("app.model.user")
+local topic_model = include("app.model.topic")
+local comment_model = include("app.model.comment")
 local common_router = {}
 
 local function topics_category_handler(current_category, req, res, next)

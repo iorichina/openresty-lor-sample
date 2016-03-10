@@ -3,10 +3,10 @@ local tinsert = table.insert
 local type = type
 local ipairs = ipairs
 local pairs = pairs
-local mysql = require("resty.mysql")
-local cjson = require("cjson")
-local utils = require("app.libs.utils")
-local config = require("app.config.config")
+local mysql = include("resty.mysql")
+local cjson = include("cjson")
+local utils = include("app.libs.utils")
+local config = include("app.config.config")
 local DB = {}
 
 function DB:new(conf)

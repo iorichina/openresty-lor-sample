@@ -3,12 +3,12 @@ local ipairs = ipairs
 local ssplit = string.split
 local tconcat = table.concat
 local tinsert = table.insert
-local lor = require("lor.index")
-local utils = require("app.libs.utils")
-local user_model = require("app.model.user")
-local topic_model = require("app.model.topic")
-local comment_model = require("app.model.comment")
-local notification_model = require("app.model.notification")
+local lor = include("lor.index")
+local utils = include("app.libs.utils")
+local user_model = include("app.model.user")
+local topic_model = include("app.model.topic")
+local comment_model = include("app.model.comment")
+local notification_model = include("app.model.notification")
 local comment_router = lor:Router()
 
 comment_router:get("/:comment_id/delete", function(req, res, next)

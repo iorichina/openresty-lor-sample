@@ -16,6 +16,6 @@ else
    PROFILE=dev
 fi
 
-mkdir -p logs & mkdir -p tmp
-echo "Use profile: "${PROFILE}
-nginx -s reload -p `pwd`/ -c conf/nginx-${PROFILE}.conf
+echo "Reload profile: "${PROFILE}
+pidfile="`pwd`/logs/nginx-${PROFILE}.pid"
+kill -HUP `cat ${pidfile}`

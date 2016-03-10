@@ -49,7 +49,7 @@ return {
 	-- ########################## 以下配置需要使用者自定义为本地需要的配置 ########################## --
 
 	-- 生成session的secret，请一定要修改此值为一复杂的字符串，用于加密session
-	session_secret = "3584827dfed45b40328acb6242bdf13b",
+	session_secret = "3584827dfed41b40328acb6242bdf13b",
 
 	-- 用于存储密码的盐，请一定要修改此值, 一旦使用不能修改，用户也可自行实现其他密码方案
 	pwd_secret = "salt_secret_for_password", 
@@ -60,21 +60,21 @@ return {
 		connect_config = {
 			host = "127.0.0.1",
 	        port = 3306,
-	        database = "blog",
+	        database = "lor_blog",
 	        user = "root",
 	        password = "",
 	        max_packet_size = 1024 * 1024
 		},
 		pool_config = {
 			max_idle_timeout = 20000, -- 20s
-        	pool_size = 50 -- connection pool size
+        	pool_size = 5 -- connection pool size
 		}
 	},
 
 	
 	-- 上传文件配置，如上传的头像、文章中的图片等
 	upload_config = {
-		dir = "/data/openresty-china/static", -- 文件目录，修改此值时须同时修改nginx配置文件中的$static_files_path值
+		dir = "../public/files", -- 文件目录，修改此值时须同时修改nginx配置文件中的$static_files_path值
 	},	
 
 }

@@ -7,9 +7,9 @@ local mrandom = math.random
 local mmodf = math.modf
 local sgsub = string.gsub
 local tinsert = table.insert
-local date = require("app.libs.date")
-local resty_sha256 = require "resty.sha256"
-local str = require "resty.string"
+local date = include("app.libs.date")
+local resty_sha256 = include "resty.sha256"
+local str = include "resty.string"
 local ngx_quote_sql_str = ngx.quote_sql_str
 
    
@@ -120,14 +120,14 @@ return _M
 
 
 
--- local resty_sha256 = require "resty.sha256"
-    -- local str = require "resty.string"
+-- local resty_sha256 = include "resty.sha256"
+    -- local str = include "resty.string"
     -- local sha256 = resty_sha256:new()
     -- ngx.say(sha256:update("hello"))
     -- local digest = sha256:final()
     -- ngx.say("sha256: ", str.to_hex(digest))
 
-    -- local resty_md5 = require "resty.md5"
+    -- local resty_md5 = include "resty.md5"
     -- local md5 = resty_md5:new()
     -- if not md5 then
     --     ngx.say("failed to create md5 object")
@@ -148,6 +148,6 @@ return _M
 
     -- local digest = md5:final()
 
-    -- local str = require "resty.string"
+    -- local str = include "resty.string"
     -- ngx.say("md5: ", str.to_hex(digest))
     --     -- yield "md5: 5d41402abc4b2a76b9719d911017c592"

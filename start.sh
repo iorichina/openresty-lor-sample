@@ -16,6 +16,6 @@ else
    PROFILE=dev
 fi
 
-mkdir -p logs & mkdir -p tmp
-echo "Use profile: "${PROFILE}
-nginx -p `pwd`/ -c conf/nginx-${PROFILE}.conf
+mkdir -p logs
+echo "Start profile: "${PROFILE}
+/usr/local/openresty-1.9.7.2/nginx/sbin/nginx -p `pwd`/ -c conf/nginx-${PROFILE}.conf

@@ -1,0 +1,1 @@
+return include "resty.session.encoders.base16"

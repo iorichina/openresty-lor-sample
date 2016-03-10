@@ -1,9 +1,9 @@
 local pairs = pairs
 local ipairs = ipairs
-local utils = require("app.libs.utils")
-local page_config = require("app.config.config").page_config
-local lor = require("lor.index")
-local topic_model = require("app.model.topic")
+local utils = include("app.libs.utils")
+local page_config = include("app.config.config").page_config
+local lor = include("lor.index")
+local topic_model = include("app.model.topic")
 local topics_router = lor:Router()
 
 

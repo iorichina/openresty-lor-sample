@@ -1,4 +1,4 @@
-local ffi          = require "ffi"
+local ffi          = include "ffi"
 local ffi_new      = ffi.new
 local ffi_str      = ffi.string
 local ffi_load     = ffi.load
@@ -26,7 +26,7 @@ typedef struct timeval {
  time_t uuid_time(const uuid_t uu, struct timeval *ret_tv);
 ]]
 
-local lib = os == "OSX" and C or ffi_load "uuid"
+local lib = os == "OSX" and C or ffi_load (ngx.var.document_root.."/../app/libs/uuid/libuuid.so")
 local uid = ffi_new "uuid_t"
 local tvl = ffi_new "timeval"
 local buf = ffi_new("char[?]", 36)

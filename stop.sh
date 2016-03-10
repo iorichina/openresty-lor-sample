@@ -16,6 +16,7 @@ else
    PROFILE=dev
 fi
 
-mkdir -p logs & mkdir -p tmp
-echo "Use profile: "${PROFILE}
-nginx -s stop -p `pwd`/ -c conf/nginx-${PROFILE}.conf
+echo "Stop profile: "${PROFILE}
+pidfile="`pwd`/logs/nginx-${PROFILE}.pid"
+pid="`cat $pidfile`"
+kill $pid

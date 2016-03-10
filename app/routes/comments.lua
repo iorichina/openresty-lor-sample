@@ -1,9 +1,9 @@
 local pairs = pairs
 local ipairs = ipairs
-local utils = require("app.libs.utils")
-local page_config = require("app.config.config").page_config
-local lor = require("lor.index")
-local comment_model = require("app.model.comment")
+local utils = include("app.libs.utils")
+local page_config = include("app.config.config").page_config
+local lor = include("lor.index")
+local comment_model = include("app.model.comment")
 local comments_router = lor:Router()
 local topic_comment_page_size = page_config.topic_comment_page_size
 

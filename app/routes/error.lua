@@ -1,6 +1,6 @@
 local pairs = pairs
 local ipairs = ipairs
-local lor = require("lor.index")
+local lor = include("lor.index")
 local errorRouter = lor:Router()
 
 

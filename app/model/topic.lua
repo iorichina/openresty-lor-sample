@@ -1,5 +1,5 @@
-local utils = require("app.libs.utils")
-local DB = require("app.libs.db")
+local utils = include("app.libs.utils")
+local DB = include("app.libs.db")
 local db = DB:new()
 
 local topic_model = {}

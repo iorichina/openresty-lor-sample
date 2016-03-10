@@ -1,5 +1,5 @@
-local upload = require("resty.upload")
-local uuid = require("app.libs.uuid.uuid")
+local upload = include("resty.upload")
+local uuid = include("app.libs.uuid.uuid")
 
 local sfind = string.find
 local match = string.match

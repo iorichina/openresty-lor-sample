@@ -2,15 +2,15 @@ local pairs = pairs
 local ipairs = ipairs
 local smatch = string.match
 local slen = string.len
-local utils = require("app.libs.utils")
-local pwd_secret = require("app.config.config").pwd_secret
-local lor = require("lor.index")
-local user_model = require("app.model.user")
-local topic_model = require("app.model.topic")
-local collect_model = require("app.model.collect")
-local comment_model = require("app.model.comment")
-local follow_model = require("app.model.follow")
-local notification_model = require("app.model.notification")
+local utils = include("app.libs.utils")
+local pwd_secret = include("app.config.config").pwd_secret
+local lor = include("lor.index")
+local user_model = include("app.model.user")
+local topic_model = include("app.model.topic")
+local collect_model = include("app.model.collect")
+local comment_model = include("app.model.comment")
+local follow_model = include("app.model.follow")
+local notification_model = include("app.model.notification")
 local user_router = lor:Router()
 
 local function isself(req, uid)

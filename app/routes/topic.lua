@@ -1,10 +1,10 @@
 local pairs = pairs
 local ipairs = ipairs
-local utils = require("app.libs.utils")
-local lor = require("lor.index")
-local topic_model = require("app.model.topic")
-local collect_model = require("app.model.collect")
-local like_model = require("app.model.like")
+local utils = include("app.libs.utils")
+local lor = include("lor.index")
+local topic_model = include("app.model.topic")
+local collect_model = include("app.model.collect")
+local like_model = include("app.model.like")
 local topic_router = lor:Router()
 
 local function isself(req, uid)

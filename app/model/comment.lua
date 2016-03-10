@@ -1,4 +1,4 @@
-local DB = require("app.libs.db")
+local DB = include("app.libs.db")
 local db = DB:new()
 
 local comment_model = {}
