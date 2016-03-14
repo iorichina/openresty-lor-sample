@@ -14,7 +14,7 @@ function Request:new()
 
     local header = headers['Content-Type']
     if header then
-        local is_multipart = sfind(header, "multipart")
+        local is_multipart = sfind(header, "multipart", 1, true)
         if is_multipart and is_multipart>0 then
             -- upload request, should not invoke ngx.req.read_body()
         else
