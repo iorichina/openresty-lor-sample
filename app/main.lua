@@ -42,7 +42,7 @@ router(app) -- business routers and routes
 -- 404 error
 app:use(function(req, res, next)
     if req:is_found() ~= true then
-    	if sfind(req.headers["Accept"], "application/json") then
+    	if sfind(req.headers["Accept"], "application/json", 1, true) then
     		res:status(404):json({
     			success = false,
     			msg = "404! sorry, not found."
@@ -57,7 +57,7 @@ end)
 app:erroruse(function(err, req, res, next)
 	ngx.log(ngx.ERR, err)
 
-	if sfind(req.headers["Accept"], "application/json") then
+	if sfind(req.headers["Accept"], "application/json", 1, true) then
 		res:status(500):json({
 			success = false,
 			msg = "500! unknown error."

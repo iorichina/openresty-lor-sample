@@ -101,7 +101,7 @@ local function uploader(config)
 			local get_headers = ngx.req.get_headers()
 			local header = get_headers['Content-Type']
 			if header then
-				local is_multipart = sfind(header, "multipart")
+				local is_multipart = sfind(header, "multipart", 1, true)
 				if is_multipart and is_multipart>0 then
 					config = config or {}
 					config.dir = config.dir or "/tmp"

@@ -44,7 +44,7 @@ local function check_login(whitelist)
 				res.locals.create_time = user.create_time
 	            next()
 	        else
-	        	if sfind(req.headers["Accept"], "application/json") then
+	        	if sfind(req.headers["Accept"], "application/json", 1, true) then
 	        		res:json({
 	        			success = false,
 	        			msg = "该操作需要先登录."
