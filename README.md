@@ -1,6 +1,6 @@
 # forked from OpenResty China 
 
-https://github.com/iorichina/openresty-lor-sample
+https://github.com/iorichina/openresty-lor-sample/tree/clean-patch
 
 ![首页](./docs/index.jpg)
 
